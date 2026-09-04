@@ -40,7 +40,6 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::429965676677:role/GitHubActionsECRPushRole
           aws-region: ap-south-1
-          disable-retry: true
 
       - name: Login to Amazon ECR
         id: login-ecr
