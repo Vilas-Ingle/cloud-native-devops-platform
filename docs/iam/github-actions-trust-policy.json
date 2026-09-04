@@ -13,7 +13,7 @@
           "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
         },
         "StringLike": {
-          "token.actions.githubusercontent.com:sub": "repo:Vilas-Ingle/cloud-native-devops-platform:ref:refs/heads/main"
+          "token.actions.githubusercontent.com:sub": "repo:Vilas-Ingle@260330199/cloud-native-devops-platform@1332719593:ref:refs/heads/main"
         }
       }
     }
