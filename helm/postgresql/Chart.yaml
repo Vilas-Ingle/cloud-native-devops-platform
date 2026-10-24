@@ -1,0 +1,6 @@
+apiVersion: v2
+name: postgresql
+description: Self-managed PostgreSQL for the cloud-native DevOps platform demo
+type: application
+version: 0.1.0
+appVersion: "16"

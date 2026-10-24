@@ -22,6 +22,10 @@ crash.log
 crash.*.log
 *.tfvars
 *.tfvars.json
+!*.tfvars.example
+# Saved Terraform plans
+**/tfplan
+*.tfplan
 
 # Python
 __pycache__/

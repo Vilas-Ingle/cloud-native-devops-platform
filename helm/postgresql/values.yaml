@@ -1,0 +1,28 @@
+image:
+  repository: postgres
+  tag: "16-alpine"
+  pullPolicy: IfNotPresent
+
+database:
+  name: cloudnative
+  adminUser: cloudnative_admin
+  adminSecret: postgres-admin-credentials
+  appUser: cloudnative_app
+  appSecret: postgres-credentials
+
+service:
+  port: 5432
+
+persistence:
+  enabled: true
+  accessModes:
+    - ReadWriteOnce
+  size: 2Gi
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi

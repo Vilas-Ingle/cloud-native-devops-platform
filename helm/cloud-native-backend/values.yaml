@@ -1,0 +1,46 @@
+replicaCount: 1
+
+image:
+  repository: "429965676677.dkr.ecr.ap-south-1.amazonaws.com/cloud-native-backend"
+  pullPolicy: IfNotPresent
+  tag: "5757f34069947f4ed8018ab0506db2e62c2b2725"
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 3000
+
+containerPort: 3000
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+livenessProbe:
+  enabled: true
+  path: /health
+  initialDelaySeconds: 15
+  periodSeconds: 10
+
+readinessProbe:
+  enabled: true
+  path: /ready
+  initialDelaySeconds: 5
+  periodSeconds: 5
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 70
+
+database:
+  host: postgresql
+  port: 5432
+  name: cloudnative
+  user: cloudnative_app
+  existingSecret: postgres-credentials
